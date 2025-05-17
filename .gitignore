@@ -1,0 +1,10 @@
+# Spring
+/backend/target/
+*.log
+
+# Frontend
+/frontend/node_modules/
+.DS_Store
+
+# 공통
+
