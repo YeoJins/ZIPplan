@@ -1,0 +1,97 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .login-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 160px;
+    margin: 20px 0;
+  }
+  
+  .welcome-sub {
+    font-size: 16px;
+    color: #333;
+    margin-top: 30px;
+  }
+  
+  .welcome-msg {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .input-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    flex: 1;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+  }
+  
+  .eye-icon {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #aaa;
+  }
+  
+  .notice {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    line-height: 1.4;
+  }
+  
+  .login-btn {
+    background-color: #6ea5ff;
+    color: white;
+    font-weight: bold;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .forgot {
+    font-size: 13px;
+    color: gray;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
