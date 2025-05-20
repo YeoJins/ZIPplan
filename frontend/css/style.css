@@ -21,13 +21,14 @@
     overflow: hidden;
   }
   
-  /* 상단 텍스트 */
+  /* 상단 텍스트(체계적이고 효율적인 ~) */
   .subtitle {
     text-align: center;
-    font-size: 14px;
-    margin-top: 169px;
+    font-size: 16px;
+    font-style: normal;
+    margin-top: 151px;
     height: 40px;
-    font-weight: 500;
+    font-weight: 600;
     font-style: normal;
     color: #212328;
     line-height: 1.4;
@@ -36,7 +37,8 @@
   /* 로고 이미지 */
   .logo {
     width: 262.44px;
-    height: 95.62px;      
+    height: 95.62px;   
+    margin-top: 50px;   
 
   }
   
@@ -60,20 +62,22 @@
     font-size: 16px;
     cursor: pointer;
     text-align: center;
+    margin-bottom: 0%;
   }
   
   
   .signup-btn {
-    width: 324.791px;
-    height: 51.185px;
+    width: 325px;
+    height: 51px;
     flex-shrink: 0;
-    border-radius: 9.306px;
+    border-radius: 9px;
     font-size: 16px;
     background-color: #FFF;
     color: #111;
     border: none;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 0.5px;
   }
   
   

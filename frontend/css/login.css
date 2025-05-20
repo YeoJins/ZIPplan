@@ -64,13 +64,14 @@ body {
     font-size: 16px;
     color: #333;
     margin-top: 30px;
+    align-items: center;
   }
   
   .welcome-msg {
     font-size: 20px;
-    font-weight: bold;
     color: #333;
     margin-bottom: 20px;
+    align-items: center;
   }
   
   .login-form {
@@ -84,7 +85,6 @@ body {
   
   label {
     font-size: 14px;
-    font-weight: bold;
     margin-top: 10px;
   }
   
@@ -94,14 +94,18 @@ body {
     position: relative;
   }
   
-  input[type="email"],
+  input#id, input[type="text"],
   input[type="password"] {
-    flex: 1;
-    padding: 12px;
+    padding: 9px;
+    width: 338.75px;
+    height: 52.185px;
     font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    width: 100%;
+    flex-shrink: 0;
+    border: 0px solid #ccc;
+    border-radius: 9px;
+    text-align: left;
+    box-sizing: border-box;
+    
   }
   
   .eye-icon {
@@ -121,12 +125,14 @@ body {
   .login-btn {
     background-color: #6ea5ff;
     color: white;
-    font-weight: bold;
     padding: 14px;
     border: none;
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
+    text-align: center;
+    width: 338.75px;
+    height: 52.115px;
   }
   
   .forgot {
@@ -139,8 +145,7 @@ body {
   }
 
   .white-bg {
-    position: absolute;
-    
+    position: relative;
     left: 0;
     bottom :0;
     width: 383.421px;
@@ -148,5 +153,6 @@ body {
     flex-shrink: 0;
     z-index: 0;
     fill: #fff;
+    margin-bottom: 0px;
   }
 
