@@ -24,18 +24,20 @@
   /* 상단 텍스트 */
   .subtitle {
     text-align: center;
-    font-size: 16px;
-    margin-top: 150px;
+    font-size: 14px;
+    margin-top: 169px;
+    height: 40px;
+    font-weight: 500;
+    font-style: normal;
     color: #212328;
     line-height: 1.4;
   }
   
   /* 로고 이미지 */
   .logo {
-    width: 365.739px;
-    height: 792.899px;      
-    height: auto;
-    margin-top: 80px;
+    width: 262.44px;
+    height: 95.62px;      
+
   }
   
   /* 버튼 영역 */
@@ -56,8 +58,8 @@
     border: none;
     border-radius: 9px;
     font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
+    text-align: center;
   }
   
   
@@ -68,10 +70,12 @@
     border-radius: 9.306px;
     font-size: 16px;
     background-color: #FFF;
-    font-weight: bold;
     color: #111;
     border: none;
+    text-align: center;
+    cursor: pointer;
   }
+  
   
   /* 하단 곡선 배경 */
   .curve-bg {
