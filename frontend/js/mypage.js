@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".go-btn").addEventListener("click", () => {
-      window.location.href = "recomm_main.html";
+      window.location.href = "money_input.html";
     });
   });

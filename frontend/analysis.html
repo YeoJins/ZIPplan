@@ -3,55 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>추천 결과</title>
+  <title>주택 트렌드 분석</title>
   <link rel="stylesheet" href="css/recomm_main.css" />
 </head>
 <body>
   <div class="container">
 
-    <!-- 상단 로고 + 상태바 -->
+    <!-- 상단 -->
     <header class="top-bar">
       <img src="assets/main_logo.png" class="logo" alt="zipplan 로고" />
       <svg class="status-icon" xmlns="http://www.w3.org/2000/svg" width="138" height="51" viewBox="0 0 138 51" fill="none">
-        <!-- 상태바 SVG 그대로 붙이면 됨 -->
+        <!-- 상태바 SVG 생략 가능 -->
       </svg>
     </header>
 
-    <!-- 인사 텍스트 -->
+    <!-- 제목 -->
     <div class="greeting">
-      <p><strong>청담동앨리스님</strong>의 요구 사항에<br /><span class="highlight">적합한 매물</span>을 찾았어요~!</p>
+      <h2 class="page-title">서울시 주택 트렌드</h2>
     </div>
 
-    <!-- 매물 정보 카드 -->
-    <div class="card">
-      <div class="speech-bubble">빅데이터로 고객님의 요구사항을 분석해서 찾았어요!</div>
-      <h2 class="title">이대 자이엘라</h2>
-
-      <div class="info-row">
-        <span>월세</span>
-        <span>85만원</span>
+    <!-- 구별 월세 평균 카드 -->
+    <div class="district-average">
+      <div class="district-card">
+        <p>강남구</p>
+        <strong>$3,500</strong>
       </div>
-      <div class="info-row">
-        <span>보증금</span>
-        <span>1000만원</span>
+      <div class="district-card">
+        <p>용산구</p>
+        <strong>$2,800</strong>
       </div>
-      <div class="info-row">
-        <span>위치</span>
-        <span>서대문구 대현동</span>
+      <div class="district-card">
+        <p>서대문구</p>
+        <strong>$2,400</strong>
       </div>
-      <div class="info-row column">
-        <span>특징</span>
-        <ul class="feature-list">
-          <li>이대역 5분 거리</li>
-          <li>정남향</li>
-          <li>풀옵션 오피스텔</li>
-          <li>건물 내 헬스장</li>
-        </ul>
+      <div class="district-card">
+        <p>강북구</p>
+        <strong>$1,800</strong>
       </div>
     </div>
 
-    <!-- 버튼 -->
-    <button class="view-all">매물 검색 결과 전체 조회하기</button>
+    <!-- 구별 순위 -->
+    <div class="district-ranking">
+      <h3>구별 월세 순위</h3>
+      <ul>
+        <li><span class="rank-number">1</span> <span>강남구</span> <small>평균 월세: $3,500</small></li>
+        <li><span class="rank-number">2</span> <span>용산구</span> <small>평균 월세: $2,800</small></li>
+        <li><span class="rank-number">3</span> <span>서대문구</span> <small>평균 월세: $2,400</small></li>
+        <li><span class="rank-number">4</span> <span>강북구</span> <small>평균 월세: $1,800</small></li>
+      </ul>
+    </div>
+
+    <!-- 상품 랭킹 -->
+    <div class="product-ranking">
+      <h3>상품 랭킹</h3>
+      <div class="product-scroll">
+        <div class="product-card premium">
+          <span class="tag">Premium</span>
+          <h4>Luxury Apartment in Gangnam</h4>
+          <p class="brand">Gangnam Luxury</p>
+          <p class="price">$3,500/month</p>
+        </div>
+        <div class="product-card affordable">
+          <span class="tag">Affordable</span>
+          <h4>Cozy Studio in Hongdae</h4>
+          <p class="brand">Hongdae Studio</p>
+          <p class="price">$2,400/month</p>
+        </div>
+        <div class="product-card popular">
+          <span class="tag">Popular</span>
+          <h4>Modern Flat in Itaewon</h4>
+          <p class="brand">Itaewon Place</p>
+          <p class="price">$2,800/month</p>
+        </div>
+      </div>
+    </div>
 
     <!-- ✅ 하단 네비게이션 바 -->
     <footer class="bottom-nav">
@@ -97,7 +122,5 @@
         </div>
       </footer>
     </div>
-
-    <script src="js/recomm_main.js"></script>
 </body>
 </html>

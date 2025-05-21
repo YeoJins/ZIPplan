@@ -72,6 +72,7 @@
     z-index: 2;
     top: 312px;
     left: 159px;
+    flex-shrink: 0;
   }
   
   /* 버튼 섹션 스타일 */
