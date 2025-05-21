@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault(); // 실제 서버 제출 막기
   
       // 모든 필수 입력값이 채워졌다고 가정하고 바로 이동
-      window.location.href = "index.html"; // ✅ 메인 페이지로 이동
+      window.location.href = "login.html"; // 로그인 페이지로 이동
     });
   });
   
