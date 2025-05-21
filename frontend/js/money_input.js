@@ -15,24 +15,36 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
   
     const container = document.getElementById("region-container");
+    let selectedLabel = null; // 현재 선택된 라벨 추적
   
     seoulDistricts.forEach(name => {
       const label = document.createElement("label");
       label.className = "region-option";
   
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.value = name;
+      // checkbox 대신 radio 사용 (단일 선택)
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "region"; // 모든 radio 버튼에 같은 name 부여
+      radio.value = name;
   
-      label.appendChild(checkbox);
+      label.appendChild(radio);
       label.append(` ${name}`);
   
       container.appendChild(label);
   
       // 선택 시 토글 스타일
-      checkbox.addEventListener("change", () => {
-        label.classList.toggle("selected", checkbox.checked);
+      radio.addEventListener("change", () => {
+        // 이전에 선택된 항목이 있으면 selected 클래스 제거
+        if (selectedLabel && selectedLabel !== label) {
+          selectedLabel.classList.remove("selected");
+        }
+        
+        // 현재 선택된 항목에 selected 클래스 추가
+        label.classList.add("selected");
+        selectedLabel = label;
       });
     });
+    
+    // 페이지 로드 시 스크롤 위치 맨 위로 (처음 4개 항목 보이도록)
+    container.scrollTop = 0;
   });
-  

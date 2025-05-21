@@ -25,7 +25,8 @@
         </svg>
       </div>
       <img src="assets/main_logo.png" class="logo" alt="zipplan 로고" />
-
+    
+  <div class="main-content">
     <!-- 인사 텍스트 -->
     <div class="greeting">
       <p><strong>청담동앨리스</strong>님의 요구 사항에<br /><span class="highlight">가장 적합한 매물</span>을 찾았어요~!</p>
@@ -67,57 +68,52 @@
 
     <!-- 버튼 -->
     <button class="view-all">매물 검색 결과 전체 조회하기</button>
+  </div>
 
-    <!-- ✅ 하단 네비게이션 바 -->
+    <!-- ✅ 수정된 하단 네비게이션 -->
     <footer class="bottom-nav">
-        <div class="nav-spacer"></div>
-        
-        <!-- 중앙 Home 아이콘 (띄우기용) -->
-        <div class="nav-home">
-          <!-- 배경 원 -->
-          <div class="home-background">
-            <svg xmlns="http://www.w3.org/2000/svg" width="103" height="101" viewBox="0 0 103 101" fill="none">
-              <g filter="url(#filter0_d_133_580)">
-                <path d="M102 52C102 79.062 79.3904 101 51.5 101C23.6096 101 1 79.062 1 52C1 24.938 23.6096 3 51.5 3C79.3904 3 102 24.938 102 52Z" fill="white"/>
-              </g>
-              <defs>
-                <filter id="filter0_d_133_580" x="0" y="0" width="103" height="101" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                  <feOffset dy="-2"/>
-                  <feGaussianBlur stdDeviation="0.5"/>
-                  <feComposite in2="hardAlpha" operator="out"/>
-                  <feColorMatrix type="matrix" values="0 0 0 0 0.933333 0 0 0 0 0.952941 0 0 0 0 0.980392 0 0 0 1 0"/>
-                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_133_580"/>
-                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_133_580" result="shape"/>
-                </filter>
-              </defs>
-            </svg>
-          </div>
-        <button class="nav-button">
-          <div class="icon-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" width="37" height="38" viewBox="0 0 37 38" fill="none">
-              <path d="M0 10.6387C0 9.49701 0.657644 8.4575 1.68926 7.9685L17.2343 0.599953C18.0354 0.220234 18.9646 0.220234 19.7657 0.599953L35.3107 7.9685C36.3424 8.4575 37 9.49702 37 10.6387V35.045C37 36.677 35.677 38 34.045 38H2.95495C1.32298 38 0 36.677 0 35.045V10.6387Z" fill="#6B9CFA"/>
-            </svg>
-          </div>
-        </button>   
-          <span class="nav-label active">Home</span>
-        </div>
-
-  
-        <!-- 우측 MY 아이콘 -->
-      <footer>
-       <button class="my-button">
-        <div class="nav-item right-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="20" viewBox="0 0 17 20" fill="none">
-            <ellipse cx="8.1701" cy="4.43578" rx="4.53882" ry="4.43578" fill="#6D6E7D"/>
-            <path d="M0 17.8901C0 13.3988 3.67855 9.75781 8.16988 9.75781C12.6612 9.75781 16.3398 13.3988 16.3398 17.8901C16.3398 18.7883 15.6116 19.5165 14.7133 19.5165H1.62645C0.728187 19.5165 0 18.7883 0 17.8901Z" fill="#6D6E7D"/>
+      <!-- 왼쪽 자리 (비어도 됨) -->
+      <div class="nav-item"></div>
+    
+      <!-- 중앙 Home 아이콘 -->
+      <div class="nav-home">
+        <div class="home-background">
+          <svg xmlns="http://www.w3.org/2000/svg" width="103" height="101" viewBox="0 0 103 101" fill="none">
+            <g filter="url(#filter0_d_133_580)">
+              <path d="M102 52C102 79.062 79.3904 101 51.5 101C23.6096 101 1 79.062 1 52C1 24.938 23.6096 3 51.5 3C79.3904 3 102 24.938 102 52Z" fill="white"/>
+            </g>
+            <defs>
+              <filter id="filter0_d_133_580" x="0" y="0" width="103" height="101" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="-2"/>
+                <feGaussianBlur stdDeviation="0.5"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.933333 0 0 0 0 0.952941 0 0 0 0 0.980392 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_133_580"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_133_580" result="shape"/>
+              </filter>
+            </defs>
           </svg>
-          <span class="nav-label">MY</span>
+            
         </div>
-        </button>
-      </footer>
-    </div>
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="37" height="38" viewBox="0 0 37 38" fill="none">
+            <path d="M0 10.6387C0 9.49701 0.657644 8.4575 1.68926 7.9685L17.2343 0.599953C18.0354 0.220234 18.9646 0.220234 19.7657 0.599953L35.3107 7.9685C36.3424 8.4575 37 9.49702 37 10.6387V35.045C37 36.677 35.677 38 34.045 38H2.95495C1.32298 38 0 36.677 0 35.045V10.6387Z" fill="#6B9CFA"/>
+          </svg>
+        </div>
+        <span class="nav-label active">Home</span>
+      </div>
+    
+      <!-- 오른쪽 MY 아이콘 -->
+      <div class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="21" viewBox="0 0 17 21" fill="none">
+          <ellipse cx="8.296" cy="5.11547" rx="4.53882" ry="4.43578" fill="#6D6E7D"/>
+          <path d="M0.125916 18.5698C0.125916 14.0784 3.80447 10.4375 8.2958 10.4375C12.7871 10.4375 16.4657 14.0784 16.4657 18.5698C16.4657 19.468 15.7375 20.1962 14.8392 20.1962H1.75237C0.854102 20.1962 0.125916 19.468 0.125916 18.5698Z" fill="#6D6E7D"/>
+        </svg>
+        <span class="nav-label">MY</span>
+      </div>
+    </footer>
 
     <script src="js/recomm_main.js"></script>
 </body>

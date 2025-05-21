@@ -2,8 +2,8 @@
 
   .logo {
     height: 31px;
-    width: 90px;
-    margin-top: 50px;
+    width: 80px;
+    margin-top: 60px;
   }
   
   .status-icon {
@@ -12,7 +12,13 @@
   
   .greeting {
     margin: 20px 0 10px;
-    font-size: 18px;
+    font-size: 24px;
+  }
+
+  .greeting-2 {
+    margin: 20px 0 10px;
+    font-size: 20px;
+    text-align: center;
   }
   
   .highlight {

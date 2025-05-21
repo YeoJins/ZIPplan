@@ -19,11 +19,14 @@
     align-items: center;
     text-align: center;
     margin-top: 50px;
+    position: relative;
+    z-index: 1;
+    
   }
   
   .headline {
     position: absolute;
-    top: 148px;
+    top: 80px;
     font-size: 27px;
     font-weight: 600;
     color: #FFF;
@@ -38,13 +41,14 @@
   
   .character {
     position: absolute;
+    top: 200px;
     width: 77px;
     height: 97px;
-    margin-top: 40px;
-    z-index: 2;
-    top: 312px;
+    z-index: 10;
     left: 159px;
     flex-shrink: 0;
+    z-index: 10;
+    margin:0 auto;
   }
   
   /* 버튼 섹션 스타일 */

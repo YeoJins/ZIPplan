@@ -1,20 +1,9 @@
-body {
-    font-family: sans-serif;
-    background-color: #f4f7fc;
-    margin: 0;
-    padding: 0;
-  }
   
-  .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-  }
-  
-  .logo {
-    height: 24px;
-  }
+ .logo {
+  height: 31px;
+  width: 90px;
+  margin-top: 50px;
+}
   
   .search-icon {
     height: 20px;
@@ -25,7 +14,7 @@ body {
   }
   
   .greeting {
-    font-size: 16px;
+    font-size: 24px;
     margin-bottom: 10px;
   }
   
@@ -56,22 +45,44 @@ body {
   .region-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 10px;
+    max-height: 150px; /* 약 4개의 항목이 보이도록 높이 제한 */
+    overflow-y: auto; /* 세로 스크롤 추가 */
+    padding-right: 10px; /* 스크롤바 공간 확보 */
+    scrollbar-width: thin; /* Firefox용 얇은 스크롤바 */
   }
   
+  .region-grid::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .region-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .region-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
   .range-group {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+    width: 100%;
   }
-  
+
   .range-group input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
+    flex: 1 1 0;
+    min-width: 0;
   }
   
   .action-buttons {
@@ -125,23 +136,23 @@ body {
   }
   
   .region-option {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s, border-color 0.2s;
+    font-size: 14px;
+    transition: all 0.2s ease;
   }
   
-  .region-option input[type="checkbox"] {
-    accent-color: #6ea5ff;
+  .region-option input[type="radio"] {
+    margin-right: 8px;
   }
   
   .region-option.selected {
-    background-color: #e6f0ff;
-    border-color: #6ea5ff;
+    background-color: #f0f7ff;
+    border-color: #6B9CFA;
+    color: #6B9CFA;
   }
   
