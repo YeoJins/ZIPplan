@@ -1,24 +1,30 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".view-all").addEventListener("click", () => {
+  const viewAllBtn = document.querySelector(".view-all");
+  const viewAllReturnBtn = document.querySelector(".view-all-return");
+  const navButton = document.querySelector(".nav-button");
+  const myButton = document.querySelector(".my-button");
+
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener("click", () => {
       window.location.href = "recomm_all.html";
     });
-  });
+  }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".view-all-return").addEventListener("click", () => {
+  if (viewAllReturnBtn) {
+    viewAllReturnBtn.addEventListener("click", () => {
       window.location.href = "money_input.html";
     });
-  });
+  }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".nav-button").addEventListener("click", () => {
+  if (navButton) {
+    navButton.addEventListener("click", () => {
       window.location.href = "analysis.html";
     });
-  });
+  }
 
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".my-button").addEventListener("click", () => {
+  if (myButton) {
+    myButton.addEventListener("click", () => {
       window.location.href = "mypage.html";
     });
-  });
+  }
+});

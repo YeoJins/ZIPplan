@@ -115,25 +115,31 @@
   }
   
   
-  .nav-item {
+  .nav-item, .nav-home {
+    background: none;
+    border: none;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
     flex: 1;
-    margin-left: 50px;
+    min-width: 60px; /* 최소 크기 지정 */
+    user-select: none;
   }
   
-  .nav-home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    transform: translateX(-50%);
-    z-index: 2;
+  .nav-item {
+    gap: 5px;
+    flex: 1;
   }
+  .nav-home {
+    position: relative; /* absolute 제거 */
+    flex: 1;
+    max-width: 80px; /* 홈 버튼이 너무 크면 조절 */
+    margin: 0 auto; /* 가운데 정렬 */
+    z-index: 10;
+  }
+  
 
   .home-background {
     position: absolute;
