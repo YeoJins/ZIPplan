@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>로그인</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
   <link rel="stylesheet" href="css/login.css" />
 </head>
 <body>
+  <div class="container">
   <div class="status-bar">
     <span class="time">
       <span class="digit-font">9:41</span>
@@ -38,11 +40,14 @@
         <input type="password" id="password" placeholder="비밀번호 입력" />
       </div>
 
-      <button type="submit" class="login-btn" onclick="location.href='mypage.html'">로그인 하기</button>
+      
+      <button type="submit" class="login-btn">로그인 하기</button>
 
 
       <a href="#" class="forgot">비밀번호를 잊어버리셨나요?</a>
     </form>
+
   </div>
+<script src="js/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zipplan - 마이페이지</title>
+  <link rel="stylesheet" href="css/money_input.css" />
+</head>
+<body>
+  <header class="top-bar">
+    <img src="assets/main_logo.png" alt="zipplan 로고" class="logo" />
+    <img src="assets/search-icon.png" alt="search" class="search-icon" />
+  </header>
+
+  <div class="content">
+    <p class="greeting"><strong>청담동앨리스님 반가워요</strong></p>
+    <button class="info-btn">📷 사용 방법 궁금하신가요?</button>
+
+    <section class="section">
+      <h3>희망 지역</h3>
+      <div id="region-container" class="region-grid">
+        <!-- JS로 구 자동 생성 -->
+      </div>
+    </section>
+    
+
+    <section class="section">
+      <h3>희망 월세 범위</h3>
+      <div class="range-group">
+        <input type="text" placeholder="최소 60,000원" />
+        <input type="text" placeholder="최대 100,000원" />
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>희망 보증금 범위</h3>
+      <div class="range-group">
+        <input type="text" placeholder="최소 60,000원" />
+        <input type="text" placeholder="최대 100,000원" />
+      </div>
+    </section>
+
+    <div class="action-buttons">
+      <button class="delete">삭제</button>
+      <button class="edit">수정</button>
+      <button class="save">등록</button>
+    </div>
+
+    <button class="recommend-btn">추천 받기</button>
+  </div>
+
+  <script src="js/money_input.js"></script>
+</body>
+</html>
