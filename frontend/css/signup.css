@@ -1,0 +1,88 @@
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 60px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.signup-form label {
+  font-weight: bold;
+}
+
+.signup-form input[type="text"],
+.signup-form input[type="password"],
+.signup-form input[type="email"] {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.input-group button {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: none;
+  background-color: #6ea5ff;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.agreement {
+  background-color: #FFF;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.agreement ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.agreement li {
+  margin-bottom: 6px;
+}
+
+.notice {
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #6ea5ff;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}

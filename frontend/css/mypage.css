@@ -1,0 +1,97 @@
+
+  .top-rectangle {
+    width: 394.421px;
+    height: 295.011px;
+    flex-shrink: 0;
+    background: #6B9CFA;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  /* 상단 섹션 스타일 */
+  .top-section {
+    width: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+    
+  }
+  
+  .headline {
+    position: absolute;
+    top: 80px;
+    font-size: 27px;
+    font-weight: 600;
+    color: #FFF;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    z-index: 2;
+  }
+  
+  .headline:nth-child(2) {
+    color: #333; /* 두 번째 headline은 원래 색상으로 유지 */
+  }
+  
+  .character {
+    position: absolute;
+    top: 200px;
+    width: 77px;
+    height: 97px;
+    z-index: 10;
+    left: 159px;
+    flex-shrink: 0;
+    z-index: 10;
+    margin:0 auto;
+  }
+  
+  /* 버튼 섹션 스타일 */
+  .btn-section {
+    width: 100%;
+    padding: 0 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 150px;
+    left:0;
+    right:0;
+  }
+  
+  .go-btn {
+    width: 100%;
+    max-width: 350px;
+    height: 56px;
+    background-color: #232937;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .later-btn {
+    width: 100%;
+    height: 56px;
+    max-width: 350px;
+    background-color: #FFF;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+
+  
