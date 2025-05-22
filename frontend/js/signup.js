@@ -21,6 +21,12 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".submit-btn").addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".back-btn").addEventListener("click", () => {
       window.location.href = "index.html";
     });
   });
