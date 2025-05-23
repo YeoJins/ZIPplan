@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const viewAllReturnBtn = document.querySelector(".view-all-return");
   const navButton = document.querySelector(".nav-button");
   const myButton = document.querySelector(".my-button");
+  const leftButton = document.querySelector(".left-button");
 
   if (viewAllBtn) {
     viewAllBtn.addEventListener("click", () => {
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (navButton) {
     navButton.addEventListener("click", () => {
-      window.location.href = "analysis.html";
+      window.location.href = "money_input.html";
     });
   }
 
@@ -26,5 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
     myButton.addEventListener("click", () => {
       window.location.href = "mypage.html";
     });
+  }
+
+  if (leftButton) {
+    leftButton.addEventListener("click", () => {
+      window.location.href = "analysis.html";
+    });
+  
   }
 });
