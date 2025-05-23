@@ -4,10 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "recomm_main.html";
   });
   document.querySelector(".nav-button").addEventListener("click", () => {
-    window.location.href = "analysis.html";
+    window.location.href = "money_input.html";
   });
   document.querySelector(".my-button").addEventListener("click", () => {
     window.location.href = "mypage.html";
+  });
+  document.querySelector(".left-button").addEventListener("click", () => {
+    window.location.href = "analysis.html";
   });
 
   const seoulDistricts = [
