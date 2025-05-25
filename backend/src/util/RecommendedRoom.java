@@ -2,7 +2,7 @@ package util;
 
 import java.sql.*;
 
-public class Recommend {
+public class RecommendedRoom {
 
     public static void main(String[] args) {
         int userId = 5; // 테스트용 유저 ID. 실제 서비스에선 로그인 유저의 ID로 대체해야 함.
