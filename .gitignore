@@ -7,5 +7,16 @@
 .DS_Store
 
 # 공통
-
 /bin/
+
+# Eclipse 설정 관련
+.classpath
+.project
+.settings/
+
+# 빌드 결과물
+target/
+
+# OS별 파일 무시
+.DS_Store
+Thumbs.db
