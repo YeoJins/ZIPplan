@@ -9,7 +9,7 @@ public class DBUtil {
         try {
             String url = "jdbc:mysql://localhost:3306/zipplan";
             String user = "root";
-            String password = "1340";
+            String password = "dustn0926";
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             e.printStackTrace();
