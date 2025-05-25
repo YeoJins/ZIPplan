@@ -9,17 +9,19 @@ public class RecommendedRoom {
 
         try (Connection conn = DBUtil.getConnection()) {
             PreparedStatement stmt = conn.prepareStatement(
-                "SELECT r.room_id, r.deposit, r.monthly_rent, r.floor, r.room_num, " +
-                "       b.building_name, rg.gu_name, rg.dong_name, " +
-                "       ABS(r.deposit - ((up.deposit_min + up.deposit_max) / 2)) AS deposit_diff, " +
-                "       ABS(r.monthly_rent - ((up.rent_min + up.rent_max) / 2)) AS rent_diff, " +
-                "       ABS(r.deposit - ((up.deposit_min + up.deposit_max) / 2)) + " +
-                "       ABS(r.monthly_rent - ((up.rent_min + up.rent_max) / 2)) AS total_diff " +
-                "FROM user_preference up " +
-                "JOIN regions rg ON up.region_id = rg.region_id " +
+                "SELECT " +
+                "    r.room_id, r.deposit, r.monthly_rent, r.floor, r.room_num, " +
+                "    b.building_name, rg.gu_name, rg.dong_name, " +
+                "    ABS(r.deposit - ((prefs.deposit_min + prefs.deposit_max) / 2)) AS deposit_diff, " +
+                "    ABS(r.monthly_rent - ((prefs.rent_min + prefs.rent_max) / 2)) AS rent_diff, " +
+                "    ABS(r.deposit - ((prefs.deposit_min + prefs.deposit_max) / 2)) + " +
+                "    ABS(r.monthly_rent - ((prefs.rent_min + prefs.rent_max) / 2)) AS total_diff " +
+                "FROM ( " +
+                "    SELECT * FROM user_preference WHERE user_id = ? " +
+                ") prefs " +
+                "JOIN regions rg ON prefs.region_id = rg.region_id " +
                 "JOIN buildings b ON b.region_id = rg.region_id " +
                 "JOIN rooms r ON r.building_id = b.building_id " +
-                "WHERE up.user_id = ? " +
                 "ORDER BY total_diff ASC " +
                 "LIMIT 1"
             );
