@@ -1,0 +1,158 @@
+  
+ .logo {
+  height: 31px;
+  width: 90px;
+  margin-top: 50px;
+}
+  
+  .search-icon {
+    height: 20px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .greeting {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .info-btn {
+    background-color: #6ea5ff;
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .section {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .section h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .region-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-height: 150px; /* 약 4개의 항목이 보이도록 높이 제한 */
+    overflow-y: auto; /* 세로 스크롤 추가 */
+    padding-right: 10px; /* 스크롤바 공간 확보 */
+    scrollbar-width: thin; /* Firefox용 얇은 스크롤바 */
+  }
+  
+  .region-grid::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .region-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .region-grid::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  .range-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .range-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  
+  .action-buttons button {
+    flex: 1;
+    padding: 12px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .delete {
+    background-color: #eee;
+    color: #333;
+  }
+  
+  .edit {
+    background-color: #b4cfff;
+    color: #333;
+  }
+  
+  .save {
+    background-color: #6ea5ff;
+    color: white;
+  }
+  
+  .recommend-btn {
+    width: 100%;
+    background-color: #3c79f5;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .region-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .region-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .region-option input[type="radio"] {
+    margin-right: 8px;
+  }
+  
+  .region-option.selected {
+    background-color: #f0f7ff;
+    border-color: #6B9CFA;
+    color: #6B9CFA;
+  }
+  
