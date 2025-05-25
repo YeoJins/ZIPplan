@@ -21,7 +21,8 @@ public class AnalysisDAO {
         List<RegionAverageDTO> list = new ArrayList<>();
         String sql = "SELECT gu_name, ROUND(AVG(rent_price)) as avg_rent " +
                      "FROM apartment_rent r JOIN regions g ON r.region_id = g.region_id " +
-                     "GROUP BY gu_name";
+                     "GROUP BY gu_name "+
+                     "HAVING avg_rent >= 2500";
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
