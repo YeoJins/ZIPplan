@@ -7,6 +7,7 @@
 .DS_Store
 
 # 공통
+.vscode/
 /bin/
 
 # Eclipse 설정 관련
