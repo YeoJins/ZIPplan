@@ -25,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify({ loginId, password }),
     })
       .then((res) => res.json())
-      .then((success) => {
-        if (success) {
+      .then((data) => {
+        if (data && !data.error) {
+          localStorage.setItem("userName", data.userName);
+          localStorage.setItem("loginId", data.loginId);
           alert("✅ 로그인 성공!");
           window.location.href = "mypage.html";
         } else {
