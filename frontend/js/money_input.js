@@ -61,6 +61,19 @@ document.addEventListener("DOMContentLoaded", function () {
   // 스크롤 초기화
   container.scrollTop = 0;
 
+    // 수정 버튼 기능 추가
+  const editButton = document.querySelector(".edit");
+  editButton.addEventListener("click", () => {
+    const inputs = document.querySelectorAll('.range-group input');
+    inputs.forEach(input => input.disabled = false); // 입력 가능하게
+  });
+
+  // 저장 버튼 기능
+  document.querySelector(".save").addEventListener("click", () => {
+    const inputs = document.querySelectorAll('.range-group input');
+    inputs.forEach(input => input.disabled = true); // 입력 불가능하게
+  });
+
   // 삭제 버튼 기능
   const deleteButton = document.querySelector(".delete");
   deleteButton.addEventListener("click", () => {
