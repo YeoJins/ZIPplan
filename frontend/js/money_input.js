@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 추천, 분석, 마이페이지 버튼 이동
+  // 페이지 이동 버튼
   document.querySelector(".recommend-btn").addEventListener("click", () => {
     window.location.href = "recomm_main.html";
   });
@@ -13,28 +13,78 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "analysis.html";
   });
 
+  // 지역 목록 및 ID 매핑
   const seoulDistricts = [
-    "강남구", "강동구", "강북구", "강서구", "관악구",
-    "광진구", "구로구", "금천구", "노원구", "도봉구",
-    "동대문구", "동작구", "마포구", "서대문구", "서초구",
-    "성동구", "성북구", "송파구", "양천구", "영등포구",
-    "용산구", "은평구", "종로구", "중구", "중랑구"
+    "강남구",
+    "강동구",
+    "강북구",
+    "강서구",
+    "관악구",
+    "광진구",
+    "구로구",
+    "금천구",
+    "노원구",
+    "도봉구",
+    "동대문구",
+    "동작구",
+    "마포구",
+    "서대문구",
+    "서초구",
+    "성동구",
+    "성북구",
+    "송파구",
+    "양천구",
+    "영등포구",
+    "용산구",
+    "은평구",
+    "종로구",
+    "중구",
+    "중랑구",
   ];
+
+  const regionMap = {
+    강남구: 1,
+    강동구: 2,
+    강북구: 3,
+    강서구: 4,
+    관악구: 5,
+    광진구: 6,
+    구로구: 7,
+    금천구: 8,
+    노원구: 9,
+    도봉구: 10,
+    동대문구: 11,
+    동작구: 12,
+    마포구: 13,
+    서대문구: 14,
+    서초구: 15,
+    성동구: 16,
+    성북구: 17,
+    송파구: 18,
+    양천구: 19,
+    영등포구: 20,
+    용산구: 21,
+    은평구: 22,
+    종로구: 23,
+    중구: 24,
+    중랑구: 25,
+  };
 
   const container = document.getElementById("region-container");
   let selectedLabel = null;
+  let isEditMode = false;
 
-  // ✅ dummy 라디오 버튼 생성 (선택 해제를 위해)
+  // dummy radio for deselection
   const dummyRadio = document.createElement("input");
   dummyRadio.type = "radio";
   dummyRadio.name = "region";
   dummyRadio.id = "dummy-radio";
   dummyRadio.style.display = "none";
-  dummyRadio.checked = true; // 기본 선택
+  dummyRadio.checked = true;
   container.appendChild(dummyRadio);
 
-  // 라디오 버튼 생성
-  seoulDistricts.forEach(name => {
+  // 지역 선택 라디오 생성
+  seoulDistricts.forEach((name) => {
     const label = document.createElement("label");
     label.className = "region-option";
 
@@ -45,10 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     label.appendChild(radio);
     label.append(` ${name}`);
-
     container.appendChild(label);
 
-    // 선택 시 스타일 토글
     radio.addEventListener("change", () => {
       if (selectedLabel && selectedLabel !== label) {
         selectedLabel.classList.remove("selected");
@@ -58,39 +106,85 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // 스크롤 초기화
   container.scrollTop = 0;
 
-    // 수정 버튼 기능 추가
-  const editButton = document.querySelector(".edit");
-  editButton.addEventListener("click", () => {
-    const inputs = document.querySelectorAll('.range-group input');
-    inputs.forEach(input => input.disabled = false); // 입력 가능하게
+  // 수정 버튼
+  document.querySelector(".edit").addEventListener("click", () => {
+    document
+      .querySelectorAll(".range-group input")
+      .forEach((input) => (input.disabled = false));
+    isEditMode = true;
   });
 
-  // 저장 버튼 기능
+  // 저장(등록/수정) 버튼
   document.querySelector(".save").addEventListener("click", () => {
-    const inputs = document.querySelectorAll('.range-group input');
-    inputs.forEach(input => input.disabled = true); // 입력 불가능하게
+    document
+      .querySelectorAll(".range-group input")
+      .forEach((input) => (input.disabled = true));
+
+    const selectedRadio = document.querySelector(
+      'input[name="region"]:checked'
+    );
+    const selectedRegion = selectedRadio?.value;
+    const regionId = regionMap[selectedRegion];
+
+    const [rentMinEl, rentMaxEl] = document.querySelectorAll(
+      ".section:nth-of-type(2) .range-group input"
+    );
+    const [depositMinEl, depositMaxEl] = document.querySelectorAll(
+      ".section:nth-of-type(3) .range-group input"
+    );
+
+    const rentMin = parseInt(rentMinEl.value.replaceAll(",", "")) || 0;
+    const rentMax = parseInt(rentMaxEl.value.replaceAll(",", "")) || 0;
+    const depositMin = parseInt(depositMinEl.value.replaceAll(",", "")) || 0;
+    const depositMax = parseInt(depositMaxEl.value.replaceAll(",", "")) || 0;
+
+    const userId = Number(localStorage.getItem("userId"));
+    if (!userId) {
+      alert("로그인이 필요합니다.");
+      window.location.href = "login.html";
+      return;
+    }
+    const data = { userId, regionId, depositMin, depositMax, rentMin, rentMax };
+
+    fetch("http://localhost:8080/api/preference", {
+      method: isEditMode ? "PUT" : "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((success) => {
+        if (success) alert(isEditMode ? "수정 완료!" : "등록 완료!");
+        else alert("실패했습니다.");
+        isEditMode = false;
+      });
   });
 
-  // 삭제 버튼 기능
-  const deleteButton = document.querySelector(".delete");
-  deleteButton.addEventListener("click", () => {
-    // 월세/보증금 input 초기화
-    const inputs = document.querySelectorAll('.range-group input');
-    inputs.forEach(input => input.value = '');
+  // 삭제 버튼
+  document.querySelector(".delete").addEventListener("click", () => {
+    const inputs = document.querySelectorAll(".range-group input");
+    inputs.forEach((input) => (input.value = ""));
 
-    // 라디오 버튼 선택 해제 (dummy 선택)
-    const dummyRadio = document.getElementById('dummy-radio');
-    if (dummyRadio) {
-      dummyRadio.checked = true;
-    }
+    const dummyRadio = document.getElementById("dummy-radio");
+    if (dummyRadio) dummyRadio.checked = true;
 
-    // 선택된 라벨 하이라이트 해제
     if (selectedLabel) {
       selectedLabel.classList.remove("selected");
       selectedLabel = null;
     }
+
+    const userId = Number(localStorage.getItem("userId"));
+
+    fetch("http://localhost:8080/api/preference", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId }),
+    })
+      .then((res) => res.json())
+      .then((success) => {
+        if (success) alert("삭제 완료!");
+        else alert("삭제 실패!");
+      });
   });
 });

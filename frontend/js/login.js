@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data && !data.error) {
           localStorage.setItem("userName", data.userName);
           localStorage.setItem("loginId", data.loginId);
+          localStorage.setItem("userId", data.userId);
           alert("✅ 로그인 성공!");
           window.location.href = "mypage.html";
         } else {
