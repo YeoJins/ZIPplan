@@ -1,17 +1,16 @@
 package main.java.util;
 
+import java.util.List;
+import java.util.Scanner;
+
 import main.java.dao.AnalysisDAO;
 import main.java.dao.UserDAO;
-import main.java.dto.UserDTO;
 import main.java.dao.UserPreferenceDAO;
 import main.java.dto.RegionAverageDTO;
 import main.java.dto.RegionAverageRankDTO;
 import main.java.dto.TopBuildingsDTO;
+import main.java.dto.UserDTO;
 import main.java.dto.UserPreferenceDTO;
-import java.util.Scanner;
-
-
-import java.util.List;
 public class Main {
     public static void main(String[] args) {
     	Scanner sc = new Scanner(System.in);

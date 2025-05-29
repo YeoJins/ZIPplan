@@ -8,8 +8,8 @@ public class DBUtil {
     public static Connection getConnection() {
         try {
             String url = "jdbc:mysql://localhost:3306/zipplan";
-            String user = "root";
-            String password = "1340";
+            String user = "testuser";
+            String password = "testpw";
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             e.printStackTrace();

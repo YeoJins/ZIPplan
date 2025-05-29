@@ -1,28 +1,29 @@
 package main.java.util;
 
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.util.List;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
+
 import main.java.dao.AnalysisDAO;
-import main.java.dao.UserDAO;
-import main.java.dao.RecommendedRoomDAO;
 import main.java.dao.MatchedRoomsDAO;
+import main.java.dao.RecommendedRoomDAO;
+import main.java.dao.UserDAO;
+import main.java.dao.UserPreferenceDAO;
+import main.java.dto.OLAPResultDTO;
 import main.java.dto.RegionAverageDTO;
+import main.java.dto.RoomDTO;
 import main.java.dto.TopBuildingsDTO;
 import main.java.dto.UserDTO;
-import main.java.dao.UserPreferenceDAO;
 import main.java.dto.UserPreferenceDTO;
-import main.java.dto.RoomDTO;
-import main.java.dto.OLAPResultDTO;
-
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.InputStreamReader;
-import java.net.InetSocketAddress;
-import java.util.List;
 
 public class SimpleServer {
     public static void main(String[] args) throws IOException {

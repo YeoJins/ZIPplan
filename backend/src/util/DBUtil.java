@@ -17,8 +17,8 @@ public class DBUtil {
       }
 
       String var0 = "jdbc:mysql://localhost:3306/zipplan?serverTimezone=Asia/Seoul";
-      String var1 = "root";
-      String var2 = "1340";
+      String var1 = "testuser";
+      String var2 = "testpw";
       return DriverManager.getConnection(var0, var1, var2);
    }
 }

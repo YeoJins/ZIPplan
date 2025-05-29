@@ -1,13 +1,13 @@
 // UserDAO.java
 package main.java.dao;
 
-import main.java.dto.UserDTO;
-import main.java.util.DBUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import main.java.dto.UserDTO;
+import main.java.util.DBUtil;
 
 public class UserDAO {
     private Connection conn;

@@ -1,11 +1,11 @@
 package main.java.dao;
 
-import main.java.dto.UserPreferenceDTO;
-import util.DBUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import main.java.dto.UserPreferenceDTO;
+import util.DBUtil;
 
 public class UserPreferenceDAO {
 

@@ -1,13 +1,17 @@
 package main.java.dao;
 
-import main.java.dto.RegionAverageDTO;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import main.java.dto.OLAPResultDTO;
+import main.java.dto.RegionAverageDTO;
 import main.java.dto.RegionAverageRankDTO;
 import main.java.dto.TopBuildingsDTO;
 import util.DBUtil;
-
-import java.sql.*;
-import java.util.*;
 
 public class AnalysisDAO {
 	
