@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const userNameEl = document.getElementById("user-name");
+  const userName = localStorage.getItem("userName");
+
+  if (userNameEl && userName) {
+    userNameEl.textContent = `${userName}님 반가워요!`;
+  }
   // 페이지 이동 버튼
   document.querySelector(".recommend-btn").addEventListener("click", () => {
     window.location.href = "recomm_main.html";
@@ -72,6 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const container = document.getElementById("region-container");
   let selectedLabel = null;
+  const saveBtn = document.querySelector(".save");
+  const deleteBtn = document.querySelector(".delete");
+  const updateBtn = document.querySelector(".update");
+
   let isEditMode = false;
 
   // dummy radio for deselection
@@ -109,18 +119,18 @@ document.addEventListener("DOMContentLoaded", function () {
   container.scrollTop = 0;
 
   // 수정 버튼
-  document.querySelector(".edit").addEventListener("click", () => {
+  updateBtn.addEventListener("click", () => {
     document
       .querySelectorAll(".range-group input")
       .forEach((input) => (input.disabled = false));
     isEditMode = true;
   });
 
-  // 저장(등록/수정) 버튼
-  document.querySelector(".save").addEventListener("click", () => {
-    document
-      .querySelectorAll(".range-group input")
-      .forEach((input) => (input.disabled = true));
+  // 저장 버튼 (등록 & 수정)
+  saveBtn.addEventListener("click", () => {
+    document.querySelectorAll(".range-group input").forEach((input) => {
+      input.disabled = true;
+    });
 
     const selectedRadio = document.querySelector(
       'input[name="region"]:checked'
@@ -146,7 +156,14 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "login.html";
       return;
     }
-    const data = { userId, regionId, depositMin, depositMax, rentMin, rentMax };
+    const data = {
+      userId,
+      regionId,
+      depositMin,
+      depositMax,
+      rentMin,
+      rentMax,
+    };
 
     fetch("http://localhost:8080/api/preference", {
       method: isEditMode ? "PUT" : "POST",
@@ -155,14 +172,16 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((res) => res.json())
       .then((success) => {
-        if (success) alert(isEditMode ? "수정 완료!" : "등록 완료!");
-        else alert("실패했습니다.");
-        isEditMode = false;
+        if (success) {
+          alert(isEditMode ? "수정 완료!" : "등록 완료!");
+        } else {
+          alert("실패했습니다.");
+        }
       });
   });
 
   // 삭제 버튼
-  document.querySelector(".delete").addEventListener("click", () => {
+  deleteBtn.addEventListener("click", () => {
     const inputs = document.querySelectorAll(".range-group input");
     inputs.forEach((input) => (input.value = ""));
 
