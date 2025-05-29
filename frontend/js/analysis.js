@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     userNameEl.textContent = `${userName}`;
   }
 
-  // 🔥 서버에서 평균 월세 데이터 가져오기
+  // 서버에서 평균 월세 데이터 가져오기
   fetch("http://localhost:8080/api/average-rent")
     .then((res) => res.json())
     .then((data) => {
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("서버 연결 실패:", err);
     });
 
-  // 🔥 서버에서 Top 건물 데이터 가져오기
+  // 서버에서 Top 건물 데이터 가져오기
   fetch("http://localhost:8080/api/top-buildings")
     .then((res) => res.json())
     .then((data) => {
@@ -72,6 +72,39 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch((err) => {
       console.error("Top buildings fetch error:", err);
+    });
+
+  // 🔥 서버에서 OLAP 결과 가져오기
+  // 🔥 서버에서 OLAP 결과 가져오기
+  fetch("http://localhost:8080/api/olap-result")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("OLAP:", data);
+      const container = document.querySelector(".olap-results");
+      container.innerHTML = "";
+
+      data.forEach((item) => {
+        const card = document.createElement("div");
+        card.classList.add("olap-card");
+
+        const guName = item.guName ?? "전체";
+        const buildingName = item.buildingName;
+        const grouping = item.level ?? "기타 기준";
+        const avg = item.avgRent?.toLocaleString() ?? "-";
+
+        card.innerHTML = `
+        <div class="olap-title">${guName}${
+          buildingName ? " - " + buildingName : ""
+        }</div>
+        <div class="olap-sub">분석 기준: <span>${grouping}</span></div>
+        <div class="olap-rent"> 평균 월세: <strong>${avg}만원</strong></div>
+      `;
+
+        container.appendChild(card); // 이 위치만 있어야 함
+      });
+    })
+    .catch((err) => {
+      console.error("OLAP fetch error:", err);
     });
 
   const viewAllBtn = document.querySelector(".view-all");

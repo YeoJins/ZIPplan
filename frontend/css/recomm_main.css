@@ -1,140 +1,199 @@
-  
+.section-divider {
+  border: none;
+  border-top: 3px dotted #ddd;
+  margin: 20px 0;
+}
 
-  .logo {
-    height: 31px;
-    width: 80px;
-    margin-top: 60px;
-  }
-  
-  .status-icon {
-    height: 20px;
-  }
-  
-  .greeting {
-    margin: 20px 0 10px;
-    font-size: 24px;
-  }
+.olap-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
 
-  .greeting-2 {
-    margin: 20px 0 10px;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .highlight {
-    color: #6B9CFA;
-    font-weight: bold;
-  }
-  
-  .card {
-    background: #eaf1ff;
-    border-radius: 12px;
-    padding: 16px;
-    margin-top: 20px;
-  }
-  
-  .speech-bubble {
-    background: #6ea5ff;
-    color: white;
-    padding: 6px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    margin-bottom: 10px;
-    width: fit-content;
-  }
-  
-  .title {
-    color: #3366ff;
-    font-size: 22px;
-    margin: 10px 0;
-  }
-  
-  .info-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 6px 0;
-    font-size: 16px;
-  }
-  
-  .info-row.column {
-    flex-direction: column;
-  }
-  
-  .feature-list {
-    margin: 6px 0 0 0;
-    padding-left: 0;
-    list-style: none;
-    font-size: 14px;
-    text-align: right;
-  }
-  
-  .feature-list li {
-    margin-bottom: 4px;
-  }
-  
-  .view-all {
-    margin-top: 20px;
-    width: 100%;
-    background: #6ea5ff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 14px;
-    font-size: 15px;
-    cursor: pointer;
-  }
+.olap-section {
+  margin: 50px 0;
+}
+.olap-section-title {
+  font-size: 19px !important;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
 
-  .view-all-return {
-    margin-top: 20px;
-    width: 100%;
-    background: #6ea5ff;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 14px;
-    font-size: 15px;
-    cursor: pointer;
-  }
+.olap-section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
 
-  /* 추천 전체 결과 카드 목록 스타일 */
-  .listing-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 20px;
-  }
-  
-  .listing-card {
-    background: white;
-    border-radius: 10px;
-    padding: 12px;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  }
-  
-  .listing-card h3 {
-    font-size: 14px;
-    margin: 0;
-    font-weight: 600;
-  }
-  
-  .listing-card .location {
-    color: #666;
-    font-size: 13px;
-  }
-  
-  .listing-card .price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #000;
-  }
-  
-  /* 구별 월세 평균 카드 */
+.olap-results {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 두 개씩 */
+  gap: 12px;
+}
+
+.olap-card {
+  background: #d3deff;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.olap-card .olap-title {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.olap-card .olap-sub {
+  font-size: 13px;
+  color: #666;
+}
+
+.olap-card .olap-rent {
+  font-size: 14px;
+  font-weight: bold;
+  color: #3366ff;
+}
+
+.logo {
+  height: 31px;
+  width: 80px;
+  margin-top: 60px;
+}
+
+.status-icon {
+  height: 20px;
+}
+
+.greeting {
+  margin: 20px 0 10px;
+  font-size: 24px;
+}
+
+.greeting-2 {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.highlight {
+  color: #6b9cfa;
+  font-weight: bold;
+}
+
+.card {
+  background: #eaf1ff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.speech-bubble {
+  background: #6ea5ff;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.title {
+  color: #3366ff;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 16px;
+}
+
+.info-row.column {
+  flex-direction: column;
+}
+
+.feature-list {
+  margin: 6px 0 0 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: right;
+}
+
+.feature-list li {
+  margin-bottom: 4px;
+}
+
+.view-all {
+  margin-top: 20px;
+  width: 100%;
+  background: #6ea5ff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.view-all-return {
+  margin-top: 20px;
+  width: 100%;
+  background: #6ea5ff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 추천 전체 결과 카드 목록 스타일 */
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.listing-card {
+  background: white;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.listing-card h3 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.listing-card .location {
+  color: #666;
+  font-size: 13px;
+}
+
+.listing-card .price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* 구별 월세 평균 카드 */
 .district-average {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -150,7 +209,7 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .district-card strong {
@@ -164,7 +223,7 @@
 }
 
 .district-ranking h3 {
-  font-size: 16px;
+  font-size: 19px;
   margin-bottom: 10px;
 }
 

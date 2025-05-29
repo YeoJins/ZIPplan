@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
           localStorage.setItem("userName", data.userName);
           localStorage.setItem("loginId", data.loginId);
           localStorage.setItem("userId", data.userId);
-          alert("✅ 로그인 성공!");
+          alert("로그인 성공!");
           window.location.href = "mypage.html";
         } else {
           alert("❌ 로그인 실패! 아이디 또는 비밀번호를 확인하세요.");
