@@ -1,8 +1,9 @@
-package dao;
+package main.java.dao;
 
-import dto.RegionAverageDTO;
-import dto.RegionAverageRankDTO;
-import dto.TopBuildingsDTO;
+import main.java.dto.RegionAverageDTO;
+import main.java.dto.OLAPResultDTO;
+import main.java.dto.RegionAverageRankDTO;
+import main.java.dto.TopBuildingsDTO;
 import util.DBUtil;
 
 import java.sql.*;
@@ -14,8 +15,13 @@ public class AnalysisDAO {
     private Connection conn;
 
     public AnalysisDAO() {
-        conn = DBUtil.getConnection();
+        try {
+            conn = DBUtil.getConnection();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+
 
     public List<RegionAverageDTO> getRegionAverageList() {
         List<RegionAverageDTO> list = new ArrayList<>();
@@ -78,5 +84,41 @@ public class AnalysisDAO {
         }
         return list;
     }
+    
+    public List<OLAPResultDTO> getMultiDimensionalRentStats() {
+        List<OLAPResultDTO> list = new ArrayList<>();
+        String sql =
+            "SELECT g.gu_name, b.building_name, ROUND(AVG(r.monthly_rent)) AS avg_rent, '구+건물 평균' AS level " +
+            "FROM rooms r " +
+            "JOIN buildings b ON r.building_id = b.building_id " +
+            "JOIN regions g ON b.region_id = g.region_id " +
+            "GROUP BY g.gu_name, b.building_name " +
+            "UNION ALL " +
+            "SELECT g.gu_name, NULL, ROUND(AVG(r.monthly_rent)) AS avg_rent, '구별 평균' AS level " +
+            "FROM rooms r " +
+            "JOIN buildings b ON r.building_id = b.building_id " +
+            "JOIN regions g ON b.region_id = g.region_id " +
+            "GROUP BY g.gu_name " +
+            "UNION ALL " +
+            "SELECT NULL, NULL, ROUND(AVG(r.monthly_rent)) AS avg_rent, '전체 평균' AS level " +
+            "FROM rooms r";
+
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            while (rs.next()) {
+                list.add(new OLAPResultDTO(
+                    rs.getString("gu_name"),
+                    rs.getString("building_name"),
+                    rs.getInt("avg_rent"),
+                    rs.getString("level")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
 }
 

@@ -1,4 +1,4 @@
-package dto;
+package main.java.dto;
 
 public class RegionAverageDTO {
     private String guName;

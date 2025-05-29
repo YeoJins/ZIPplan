@@ -1,6 +1,6 @@
-package dao;
+package main.java.dao;
 
-import dto.UserPreferenceDTO;
+import main.java.dto.UserPreferenceDTO;
 import util.DBUtil;
 
 import java.sql.Connection;
