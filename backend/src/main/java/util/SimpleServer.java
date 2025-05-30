@@ -10,7 +10,7 @@ import main.java.dao.AnalysisDAO;
 import main.java.dao.UserDAO;
 import main.java.dao.RecommendedRoomDAO;
 import main.java.dao.MatchedRoomsDAO;
-import main.java.dto.RegionAverageDTO;
+import main.java.dto.RegionAverageRankDTO;
 import main.java.dto.TopBuildingsDTO;
 import main.java.dto.UserDTO;
 import main.java.dao.UserPreferenceDAO;
@@ -44,7 +44,7 @@ public class SimpleServer {
         System.out.println("✅ Server running on http://localhost:8080");
     }
 
-    // ✅ CORS 허용 함수 (모든 핸들러에서 호출)
+    // ✅CORS 허용 함수 (모든 핸들러에서 호출)
     private static void enableCORS(HttpExchange exchange) {
         exchange.getResponseHeaders().add("Access-Control-Allow-Origin", "*");
         exchange.getResponseHeaders().add("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
@@ -62,7 +62,7 @@ public class SimpleServer {
                 return;
             }
 
-            List<RegionAverageDTO> data = new AnalysisDAO().getRegionAverageList();
+            List<RegionAverageRankDTO> data = new AnalysisDAO().getRegionAverageWithRank();
             String responseJson = new Gson().toJson(data);
 
             byte[] responseBytes = responseJson.getBytes("UTF-8");

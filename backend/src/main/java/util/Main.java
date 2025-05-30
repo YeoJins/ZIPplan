@@ -20,11 +20,11 @@ public class Main {
         UserDAO dao3 = new UserDAO();
 
 
-        System.out.println("== 구별 월세 평균 ==");
-        List<RegionAverageDTO> averages = dao.getRegionAverageList();
-        for (RegionAverageDTO dto : averages) {
-            System.out.println(dto.getGuName() + ": " + dto.getAverageRent() + "만원");
-        }
+        // System.out.println("== 구별 월세 평균 ==");
+        // List<RegionAverageDTO> averages = dao.getRegionAverageList();
+        // for (RegionAverageDTO dto : averages) {
+        //     System.out.println(dto.getGuName() + ": " + dto.getAverageRent() + "만원");
+        // }
 
         System.out.println("\n== 구별 월세 순위 ==");
         List<RegionAverageRankDTO> ranks = dao.getRegionAverageWithRank();
