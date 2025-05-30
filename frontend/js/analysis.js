@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         li.innerHTML = `
           <span class="rank-number">${i + 1}</span>
           <span>${item.guName}</span>
-          <small>평균 월세: ${item.averageRent.toLocaleString()}만원</small>
+          <small>평균 시세: ${item.averageRent.toLocaleString()}만원</small>
         `;
         rankingList.appendChild(li);
       });
@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Top buildings fetch error:", err);
     });
 
-  // 🔥 서버에서 OLAP 결과 가져오기
   // 🔥 서버에서 OLAP 결과 가져오기
   fetch("http://localhost:8080/api/olap-result")
     .then((res) => res.json())
